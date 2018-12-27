@@ -1,3 +1,4 @@
+import random
 
 print("\033[5;37;40m Guess the Song\033[0;37;40m \n")
 print ("""
@@ -14,9 +15,13 @@ print ("""
 def write(file_write, usernames):
     with open(file_write, "a+") as file:
         file.write(usernames)
+"""
+Is this even used?
 def Enter(file_write, userpassword):
-    with open(file_write, "a+") as file:
-        file.write(userpassword)
+   with open(file_write, "a+") as file:        
+       file.write(userpassword)
+"""
+
 #this runs the first inputs for the start menu
 def start_menu():
     print ("""
@@ -27,7 +32,6 @@ def start_menu():
 
     if selection.lower() == 'a':
         menu_A()
-
     elif selection.lower() == 'b':
         music()
 
@@ -45,7 +49,6 @@ def menu_A():
 
     if start.lower() == 'yes':
         music()
-
     elif start.lower() == 'no':
         start_menu()
 
@@ -55,9 +58,9 @@ def music():
     with open("artists.txt", 'r') as file:
        all_lines = file.readlines()
 
-    import random
     song = random.choice(all_lines).split(",")
 
     print(song[0][0])
     print (song[1])
+    
 start_menu()
